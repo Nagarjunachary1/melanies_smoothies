@@ -1,5 +1,7 @@
 # Import python packages
 import streamlit as st
+import requests
+
 #from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
 
@@ -48,8 +50,7 @@ if ingerdient_list:
 
 
 
-import requests
-smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-sf_df=st.dataframe(data=smoothiefroot_response.json(),use_container_width=True)
+#smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+#sf_df=st.dataframe(data=smoothiefroot_response.json(),use_container_width=True)
 
 
