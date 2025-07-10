@@ -27,12 +27,12 @@ ingerdient_list =st.multiselect(
 );
 
 if ingerdient_list:
-    st.write("You selected:", ingerdient_list)
-    st.text( ingerdient_list)
-
     ingredients_string = '';
+
     for fruit_chosen in ingerdient_list:
         ingredients_string+=fruit_chosen+' ';
+        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+        sf_df=st.dataframe(data=smoothiefroot_response.json(),use_container_width=True)
         
     st.write("ingerdient_string="+ingredients_string);
 
@@ -50,7 +50,6 @@ if ingerdient_list:
 
 import requests
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-#st.text(smoothiefroot_response.json())
 sf_df=st.dataframe(data=smoothiefroot_response.json(),use_container_width=True)
 
 
